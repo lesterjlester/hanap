@@ -1,0 +1,7 @@
+{
+  "name": "hanap",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
