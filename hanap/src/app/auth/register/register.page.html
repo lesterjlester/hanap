@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <form (ngSubmit)="onSubmit()" [formGroup]="credentials">
+
+      <!-- // password -->
+      <div class="ion-margin-top">
+        <ion-item style="border: 1px solid #D6D8DB; border-radius: 10px; " lines="none">
+          <ion-input type="text" placeholder="First Name" formControlName="f_name" autocomplete="off"
+            class="primary-input"></ion-input>
+          <ion-icon name="person-circle" slot="start" color="orange"></ion-icon>
+        </ion-item>
+        <div class="ion-text-start">
+          <ion-note class="font-12" color="danger"
+            *ngIf="errorControl?.['f_name']?.errors?.['required'] && credentials.get('f_name')?.dirty">
+            First name is required.
+          </ion-note>
+        </div>
+      </div>
+
+      <div class="ion-margin-top">
+        <ion-item style="border: 1px solid #D6D8DB; border-radius: 10px; " lines="none">
+          <ion-input type="text" placeholder="Last Name" formControlName="l_name" autocomplete="off"
+            class="primary-input"></ion-input>
+          <ion-icon name="person-circle" slot="start" color="orange"></ion-icon>
+        </ion-item>
+        <div class="ion-text-start">
+          <ion-note class="font-12" color="danger"
+            *ngIf="errorControl?.['l_name']?.errors?.['required'] && credentials.get('l_name')?.dirty">
+            Last name is required.
+          </ion-note>
+        </div>
+      </div>
+
+      <div class="ion-margin-top">
+        <ion-item style="border: 1px solid #D6D8DB; border-radius: 10px; " lines="none">
+          <ion-input type="text" placeholder="Middle Name" formControlName="m_name" autocomplete="off"
+            class="primary-input"></ion-input>
+          <ion-icon name="person-circle" slot="start" color="orange"></ion-icon>
+        </ion-item>
+        <div class="ion-text-start">
+          <ion-note class="font-12" color="danger"
+            *ngIf="errorControl?.['m_name']?.errors?.['required'] && credentials.get('m_name')?.dirty">
+            Middle name is required.
+          </ion-note>
+        </div>
+      </div>
+
+      <div class="ion-margin-top">
+        <ion-item style="border: 1px solid #D6D8DB; border-radius: 10px; " lines="none">
+          <ion-input type="email" placeholder="email@example.com" formControlName="email" autocomplete="off"
+            class="primary-input"></ion-input>
+          <ion-icon name="mail-outline" slot="start" color="orange"></ion-icon>
+        </ion-item>
+        <div class="ion-text-start">
+          <ion-note class="font-12" color="danger"
+            *ngIf="errorControl?.['email']?.errors?.['required'] && credentials.get('email')?.dirty">
+            Email is required.
+          </ion-note>
+          <ion-note class="font-12" color="danger"
+            *ngIf="errorControl?.['email']?.errors?.['pattern'] && credentials.get('email')?.dirty">
+            Invalid email
+          </ion-note>
+        </div>
+      </div>
+
+      <div class="ion-margin-top">
+        <ion-item style="border: 1px solid #D6D8DB; border-radius: 10px; " lines="none">
+          <ion-input type="text" placeholder="Phone Number" formControlName="p_number" autocomplete="off"
+            class="primary-input"></ion-input>
+          <ion-icon name="call-outline" slot="start" color="orange"></ion-icon>
+        </ion-item>
+        <div class="ion-text-start">
+          <ion-note class="font-12" color="danger"
+            *ngIf="errorControl?.['p_number']?.errors?.['required'] && credentials.get('p_number')?.dirty">
+            Mobile number is required.
+          </ion-note>
+        </div>
+      </div>
+
+
+      <!-- // forgot password -->
+      <div class="ion-text-start ion-margin-top">
+        <ion-text color="orange">
+          <div class="forgot-password" (click)="forgotPassword()">Back to Login?</div>
+        </ion-text>
+      </div>
+      <!-- // signin action∂ -->
+      <div class="div-h6"></div>
+      <div>
+        <ion-button [disabled]="this.credentials.invalid" expand="block" type="submit" style="--border-radius: 5px; --background: orange;" mode="ios">CREATE
+          NEW ACCOUNT </ion-button>
+      </div>
+      <div class="div-h5"></div>
+    </form>
+  </div>
+</ion-content>
