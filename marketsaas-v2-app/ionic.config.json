@@ -1,0 +1,7 @@
+{
+  "name": "marketsaas-v2-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
