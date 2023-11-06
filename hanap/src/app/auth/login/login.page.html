@@ -1,0 +1,47 @@
+<ion-content [fullscreen]="true">
+  <div class="center-div">
+    <ion-grid class="ion-text-center">
+      <ion-row>
+        <ion-col>
+          <div>
+            <img src="assets/images/icon.jpg " class="neu-card" width="150" height="150" />
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="div-h8"></div>
+      <div class="neu-card ion-margin ion-padding">
+        <form (ngSubmit)="onSubmit()" [formGroup]="credentials" novalidate>
+          <div class="ion-padding-top ion-margin-top">
+            <ion-item style="border: 1px solid #D6D8DB; border-radius: 10px; " lines="none">
+              <ion-input type="email" placeholder="email@example.com" formControlName="email" autocomplete="off"
+                class="primary-input"></ion-input>
+              <ion-icon name="mail-outline" slot="start" color="orange"></ion-icon>
+            </ion-item> 
+          </div>
+          <!-- // password -->
+          <div class="ion-margin-top">
+            <ion-item style="border: 1px solid #D6D8DB; border-radius: 10px; " lines="none">
+              <ion-input [type]="!vPassword ? 'password': 'text'" placeholder="Password" formControlName="password" autocomplete="off"
+                class="primary-input"></ion-input>
+              <ion-icon name="lock-closed-outline" slot="start" color="orange"></ion-icon>
+              <ion-icon [name]="!vPassword ? 'eye-off': 'eye'" slot="end" (click)="vPassword = !vPassword" color="orange"></ion-icon>
+            </ion-item> 
+          </div>
+          <!-- // forgot password -->
+          <div class="ion-text-start ion-margin-top">
+            <ion-text  color="orange">
+              <div class="forgot-password" (click)="forgotPassword()">Create an account?</div>
+            </ion-text>
+          </div>
+          <!-- // signin action∂ -->
+          <div class="div-h6"></div>
+          <div>
+            <ion-button expand="block" type="submit"
+              style="--border-radius: 5px; --background: orange;"  mode="ios">LOGIN</ion-button>
+          </div>
+          <div class="div-h5"></div>
+        </form>
+      </div>
+    </ion-grid>
+  </div>
+</ion-content>
