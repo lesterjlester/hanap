@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Update/Add Product</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closePage()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()">
+      <ion-item>
+        <ion-label position="stacked">Product Name</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Quantity</ion-label>
+        <ion-input formControlName="quantity" type="number" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Old Price</ion-label>
+        <ion-input formControlName="price" type="number" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Profit</ion-label>
+        <ion-input formControlName="profit" type="number" required >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Sell Price</ion-label>
+        <ion-input readonly formControlName="sell_price" type="number"  required>
+        </ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" mode="ios" color="success" shape="full" expand="block">{{id ? 'Update': 'Add'}} Product</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>

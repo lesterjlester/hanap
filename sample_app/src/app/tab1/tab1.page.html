@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">PRODUCT LIST</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="sync()">
+        SYNC
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-chip style="height: 50px;">Default</ion-chip>
+  <ion-searchbar (ionChange)="onSearch($event)" placeholder="Search" mode="ios"></ion-searchbar>
+  <ion-list lines="full">
+    <ion-item *ngFor="let item of filteredItems">
+      <ion-label>
+        <div style="font-weight: bold;">{{item.name}}</div>
+        <div>QTY: <span style="font-weight: bold;">{{item.quantity}}</span></div>
+      </ion-label>
+      <ion-badge mode="ios" color="success">{{item.sell_price}}</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

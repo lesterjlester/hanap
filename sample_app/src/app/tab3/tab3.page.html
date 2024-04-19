@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">PRODUCT EDIT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-list lines="full">
+    <ion-item *ngFor="let item of records">
+      <ion-label>
+        <div style="font-weight: bold;">{{item.name}}</div> 
+        <div>Quantity: <span style="font-weight: bold;">{{item.quantity}}</span></div>
+        <div>Price: <span style="font-weight: bold;">{{item.price}}</span></div>
+        <div>Profit: <span style="font-weight: bold;">{{item.profit}}</span></div>
+        <div>Sell Price: <span style="font-weight: bold;">{{item.sell_price}}</span></div>
+      </ion-label>
+      <div>
+        <ion-icon size="large" color="danger" (click)="DeleteRecord(item.id)" name="trash-outline"></ion-icon>
+        <ion-icon size="large" color="primary" (click)="EditRecord(item)" name="create-outline"></ion-icon>
+      </div>
+    </ion-item> 
+  </ion-list>
+</ion-content>
